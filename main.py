@@ -9,7 +9,6 @@ load_dotenv()
 
 TOKEN = os.getenv("TOKEN")
 CANAL_DESTINO_ID = int(os.getenv("CANAL_DESTINO_ID"))
-CANAL_GERAL_ID = int(os.getenv("CANAL_GENERAL_ID"))
 
 intents = discord.Intents.default()
 intents.message_content = True
