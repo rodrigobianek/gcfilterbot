@@ -5,8 +5,6 @@ import datetime
 from dotenv import load_dotenv
 from discord.ext import commands
 
-load_dotenv()
-
 TOKEN = os.getenv("TOKEN")
 CANAL_DESTINO_ID = int(os.getenv("CANAL_DESTINO_ID"))
 
@@ -41,8 +39,6 @@ async def on_message(message):
 
     await bot.process_commands(message)
 
-bot.run(TOKEN)
-
 @bot.command()
 async def scan(ctx):
     await ctx.send("🔍 Iniciando varredura (últimos 7 dias)...")
@@ -73,3 +69,5 @@ async def scan(ctx):
             await asyncio.sleep(1)
 
     await ctx.send(f"✅ Finalizado! {count} mensagens encontradas.")
+
+bot.run(TOKEN)
