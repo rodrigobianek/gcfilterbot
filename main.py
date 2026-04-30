@@ -22,6 +22,9 @@ async def on_message(message):
     if message.author == bot.user:
         return
 
+    if message.channel.id == CANAL_DESTINO_ID:
+        return
+
     if "https://gamersclub.com.br" in message.content:
         canal_destino = bot.get_channel(CANAL_DESTINO_ID)
 
